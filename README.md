@@ -1,4 +1,4 @@
-# 🤖 Frontier Explorer — ROS 2 Autonomous Mapping
+#  Frontier Explorer — ROS 2 Autonomous Mapping
 
 A ROS 2 Humble package that lets a TurtleBot3 explore an unknown environment completely on its own. The robot builds a map in real time using SLAM, detects unexplored regions (called *frontiers*), and navigates to them one by one until the entire area is mapped — no human input needed.
 
@@ -134,15 +134,7 @@ frontier_ws/
 
 ---
 
-## Troubleshooting
 
-**Robot not moving?** — Check that Nav2 is fully initialized. The frontier node waits 10 seconds on launch, but on slow machines Nav2 might need more time. Try increasing the `period` in `exploration.launch.py`.
-
-**"No map yet" in logs?** — SLAM Toolbox hasn't published a map yet. Give it a few seconds after launch.
-
-**Goals keep getting rejected?** — Make sure `TURTLEBOT3_MODEL` is set and the Nav2 costmaps are configured properly. Check `nav2_params.yaml`.
-
-**All frontiers blacklisted?** — The explorer automatically clears its failed-goal memory when it runs out of candidates, so it will retry after a cycle.
 
 ---
 
